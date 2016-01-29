@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/EvanAppStore.iml" filepath="$PROJECT_DIR$/.idea/EvanAppStore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Recommender/.idea/Recommender.iml" filepath="$PROJECT_DIR$/../Recommender/.idea/Recommender.iml" />
     </modules>
   </component>
 </project>

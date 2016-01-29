@@ -7,7 +7,7 @@ class HuaweiSpider(scrapy.Spider):
     name = 'huawei_appstore'
     allowed_domains=["huawei.com"]
     start_urls=[]
-    for i in range(1,2):
+    for i in range(1,42):
         start_urls.append('http://appstore.huawei.com/more/all/'+str(i))
 
     def parse(self, response):
@@ -29,14 +29,15 @@ class HuaweiSpider(scrapy.Spider):
         item['appid']=appid
         item['intro']=page.xpath('//meta[@name="description"]/@content').extract_first().encode('utf-8')
 
+        item['img']=page.xpath('//li[@class="img"]/img[@class="app-ico"]/@lazyload').extract_first().encode('utf-8')
         divs=page.xpath('//div[@class="open-info"]')
         recommend=""
         for div in divs:
             url=div.xpath('./p[@class="name"]/a/@href').extract_first()
             appid=item['url'].split('/')[-1]
             name=div.xpath('./p[@class="name"]/a/text()').extract_first().encode('utf-8')
-            recommend+="{0}:{1}; ".format(appid,name)
-        item['recommend']=recommend
+            recommend+="{0}:{1},".format('{"'+appid+'"','"'+name+'"}')
+        item['recommend']=recommend[:len(recommend)-1]
 
 
         yield item

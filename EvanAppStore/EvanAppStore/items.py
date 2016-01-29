@@ -15,5 +15,6 @@ class EvanappstoreItem(scrapy.Item):
     url=scrapy.Field()
     appid=scrapy.Field()
     intro=scrapy.Field()
+    img=scrapy.Field()
     recommend=scrapy.Field()
     pass
