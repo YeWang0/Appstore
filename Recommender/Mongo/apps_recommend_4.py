@@ -6,6 +6,7 @@ def get_apps_recommend():
     db = client.appstore
 
     db_app_info=db.app_info
+    db_app_user=db.app_user
     db_app_user_similarity=db.app_user_similarity
     db_user_download_history=db.user_download_history
     db_apps_similarity=db.apps_similarity
@@ -16,7 +17,7 @@ def get_apps_recommend():
         else:
             return s[:s.find('*')]
 
-    recommend=[[]for i in range(db_app_info.find().count())]
+    recommend=[[]for i in range(db_app_user.find().count())]
 
     def get_top5(app_dict,values):
         r=[]
@@ -36,8 +37,8 @@ def get_apps_recommend():
 
     i=0
     apps_dict=[]
-    for app_info in db_app_info.find():
-        app_id=app_info['app_id']
+    for app_user in db_app_user.find():
+        app_id=app_user['app_id']
         # print(app_id)
         app_dict=dict()
         values=[]
@@ -56,5 +57,8 @@ def get_apps_recommend():
             values=sorted(values,reverse=True)
             recommend[i]=get_top5(app_dict,values)
             db.top5_recommend.insert_one({'app_id':app_id,'top5':recommend[i][:5]})
+            db.app_info.update_one({'app_id':app_id},
+                               {'$set': {'top5':recommend[i][:5]}})
         i+=1
 
+get_apps_recommend()

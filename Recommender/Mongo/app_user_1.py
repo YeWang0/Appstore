@@ -17,7 +17,7 @@ def get_app_user():
     # file=open('app_user.json','wb')
     for i in range(len(app_id)):
         # print i,len(app_id)
-        r2=user_download_history.find()
+        r2=user_download_history.find().count()
         for x in r2:
             # print(i,x['user_id'])
             if app_id[i] in x['download_history']:
@@ -26,3 +26,5 @@ def get_app_user():
         if len(relat_user[i])!=0:
             app_user={'app_id':app_id[i],'relat_user':relat_user[i]}
             db.app_user.insert_one(app_user)
+
+get_app_user()
