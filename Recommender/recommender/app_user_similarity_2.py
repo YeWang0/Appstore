@@ -6,7 +6,7 @@ def get_app_user_similarity():
         # print app_id,user_id
         d=user_download_history.find({'user_id':user_id})
         for t in d:
-            cos_similarity=sqrt(len(t.get('download_history')))
+            cos_similarity=1/sqrt(len(t.get('download_history')))
         app_user_similarity={'app_id':app_id,'user_id':user_id,'cos_similarity':cos_similarity}
         # file.write(json.dumps(app_user_similarity))
         db.app_user_similarity.insert_one(app_user_similarity)
