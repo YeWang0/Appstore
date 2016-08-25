@@ -2,6 +2,7 @@ from pymongo import MongoClient
 from math import sqrt
 import json
 def get_app_user_similarity():
+
     def cos_app_user(app_id,user_id):
         # print app_id,user_id
         d=user_download_history.find({'user_id':user_id})
@@ -18,9 +19,16 @@ def get_app_user_similarity():
     app_user=db.app_user
     user_download_history=db.user_download_history
     result=app_user.find()
+
+    # Drop the collection if already exist
+    if db.app_user_similarity.count():
+        db.app_user_similarity.drop()
+
     for x in result:
         # print(x['relat_user'])
         for user_id in x['relat_user']:
             cos_app_user(x['app_id'],user_id)
+
+get_app_user_similarity()
 
 

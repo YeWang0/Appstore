@@ -33,7 +33,9 @@ def get_apps_recommend():
                         r.append(id)
         return r
 
-
+    # Drop the collection if already exist
+    if db.top5_recommend.count():
+        db.top5_recommend.drop()
 
     i=0
     apps_dict=[]

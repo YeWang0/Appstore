@@ -15,7 +15,7 @@ for x in db_app_user.find():
     else:
         s.add(x['app_id'])
 
-print len(s)
+# print len(s)
 for x in db_top5.find():
     if x['app_id'] not in s:
         print x['app_id']

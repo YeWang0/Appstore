@@ -38,6 +38,13 @@ def get_apps_similarity():
 
     # file=open('apps_similarity.json','wb')
     # file.write(json.dumps(apps_similarity))
+
+    # Drop the collection if already exist
+    if db.apps_similarity.count():
+        db.apps_similarity.drop()
+
     for key,value in apps_similarity.iteritems():
         apps_similarity={'apps_id':key,'apps_cos_similarity':value}
         db.apps_similarity.insert_one(apps_similarity)
+
+get_apps_similarity()
