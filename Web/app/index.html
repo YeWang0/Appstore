@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="huaweiApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Evan app store</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="app-list/app-list.module.js"></script>
+    <script src="app-list/app-list.component.js"></script>
+    <script src="app-detail/app-detail.module.js"></script>
+    <script src="app-detail/app-detail.component.js"></script>
+    <script src="app-head/app-head.module.js"></script>
+    <script src="app-head/app-head.component.js"></script>
+    <script src="app-tool/app-tool.module.js"></script>
+    <script src="app-tool/app-tool.component.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script data-require="bootstrap.js@*" data-semver="3.3.6" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--<link rel="stylesheet" href="style.css" />-->
+    <style type="text/css">
+    h1 {
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body class="container" >
+
+    <div ng-view ></div>
+    
+</body>
+
+</html>

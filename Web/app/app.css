@@ -1,0 +1,9 @@
+body {
+  padding-top: 20px;
+  background-color: red;
+}
+.card-media {
+  background-color: #FFFAFF; 
+}
+.sort .text { float:right }
+

@@ -1,0 +1,143 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon2">Search</span>
+            <input ng-model="query" type="text" class="form-control" placeholder="Search for...e.g. QQ,泡泡龙,植物大战僵尸" id="search_query">
+            <!--</input>-->
+            <span class="input-group-btn">
+           <button class="btn btn-success" type="button" id = "generate">Try your luck!</button>
+          </span>
+        </div>
+        <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<br>
+<div class="row">
+    <span class="col-md-8">
+          </span>
+    <span class="col-md-2 text-right">
+            Sorted by:
+          </span>
+    <span class="input-group-btn col-md-2">
+          <select ng-model="orderProp" class="btn btn-default dropdown-toggle" type="button">
+          <option value="title" >Name</option>
+          <option value="app_id">ID</option>
+          <option value="-score">Score: High-Low</option>
+          <option value="score">Score: Low-High</option>
+          
+          </select>
+          </span>
+</div>
+<div class="container-fluid" >
+    <hr>
+    <div ng-controller="AppCtrl" ng-cloak>
+        <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
+            <div flex-xs flex-gt-xs="25">
+                <md-card ng-if="$index%4==0" ng-repeat="app in apps | filter:query |orderBy:orderProp | startFrom:currentPage*pageSize | limitTo:pageSize" md-theme="{{ !showDarkTheme ? 'dark-teal' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{app.title}}</span>
+                            <!-- <span class="md-subhead">{{app.developer}}</span> -->
+                            <span class="md-subhead">Score: {{app.score}}</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-sm card-media">
+                                <img ng-src="{{app.thumbnail_url}}" class="md-card-image" alt="thumbnail">
+                            </div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <!-- <md-card-content>
+                            <span class="md-content">{{app.intro}}</span>
+                        </md-card-content> -->
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button href="/#!/apps/{{app.app_id}}" ng-click="getAppData(app)">Detail</md-button>
+                        <md-button href="{{app.url}}">Link</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+            <div flex-xs flex-gt-xs="25">
+                <md-card ng-if="$index%4==1" ng-repeat="app in apps | filter:query |orderBy:orderProp | startFrom:currentPage*pageSize | limitTo:pageSize" md-theme="{{ !showDarkTheme ? 'dark-amber' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{app.title}}</span>
+                            <!-- <span class="md-subhead">{{app.developer}}</span> -->
+                            <span class="md-subhead">Score: {{app.score}}</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-sm card-media">
+                                <img ng-src="{{app.thumbnail_url}}" class="md-card-image" alt="thumbnail">
+                            </div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <!-- <md-card-content>
+                            <span class="md-content">{{app.intro}}</span>
+                        </md-card-content> -->
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button href="/#!/apps/{{app.app_id}}" ng-click="getAppData(app)">Detail</md-button>
+                        <md-button href="{{app.url}}">Link</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+            <div flex-xs flex-gt-xs="25">
+                <md-card ng-if="$index%4==2" ng-repeat="app in apps | filter:query |orderBy:orderProp | startFrom:currentPage*pageSize | limitTo:pageSize" md-theme="{{ !showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{app.title}}</span>
+                            <!-- <span class="md-subhead">{{app.developer}}</span> -->
+                            <span class="md-subhead">Score: {{app.score}}</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-sm card-media">
+                                <img ng-src="{{app.thumbnail_url}}" class="md-card-image" alt="thumbnail">
+                            </div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <!-- <md-card-content>
+                            <span class="md-content">{{app.intro}}</span>
+                        </md-card-content> -->
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button href="/#!/apps/{{app.app_id}}" ng-click="getAppData(app)">Detail</md-button>
+                        <md-button href="{{app.url}}">Link</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+            <div flex-xs flex-gt-xs="25">
+                <md-card ng-if="$index%4==3" ng-repeat="app in apps | filter:query |orderBy:orderProp | startFrom:currentPage*pageSize | limitTo:pageSize" md-theme="{{ !showDarkTheme ? 'dark-red' : 'default' }}" md-theme-watch>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{app.title}}</span>
+                            <!-- <span class="md-subhead">{{app.developer}}</span> -->
+                            <span class="md-subhead">Score: {{app.score}}</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-sm card-media">
+                                <img ng-src="{{app.thumbnail_url}}" class="md-card-image" alt="thumbnail">
+                            </div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    <!-- <md-card-content>
+                            <span class="md-content">{{app.intro}}</span>
+                        </md-card-content> -->
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button href="/#!/apps/{{app.app_id}}" ng-click="getAppData(app)">Detail</md-button>
+                        <md-button href="{{app.url}}">Link</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+        </md-content>
+        <hr>
+        <div layout layout-padding layout-align="center">
+            <md-button style="height: 36px;padding-top: 1px;" class="md-primary" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                Previous
+            </md-button>
+            <span><font size="3">{{currentPage+1}}/{{numberOfPages()}}</font></span>
+            <md-button style="height: 36px;padding-top: 1px;" class="md-primary" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                Next
+            </md-button>
+        </div>
+        <div layout layout-padding layout-align="center end" style="height:200px">
+            <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
+        </div>
+    </div>
+</div>

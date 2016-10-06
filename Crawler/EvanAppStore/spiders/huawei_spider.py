@@ -11,6 +11,7 @@ class HuaweiSpider(scrapy.Spider):
         start_urls.append('http://appstore.huawei.com/more/all/'+str(i))
 
     def parse(self, response):
+        # Extract urls from homepage
         page=Selector(response)
         divs=page.xpath('//div[@class="game-info  whole"]')
         urls=[]
@@ -20,6 +21,7 @@ class HuaweiSpider(scrapy.Spider):
 
 
     def parse_url(self, response):
+        # Extract title, url, intro, recommended apps from the app page
         page=Selector(response)
         item=EvanappstoreItem()
 

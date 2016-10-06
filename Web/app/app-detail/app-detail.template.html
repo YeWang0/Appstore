@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
+        <div flex-xs flex-gt-xs="75">
+            <h1 class="display-1">Detailed Information</h1>
+            <md-card md-theme="{{'dark-blue'}}" md-theme-watch>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{$ctrl.selectedApp.title}}</span>
+                        <span class="md-subhead">{{$ctrl.selectedApp.developer}}</span>
+                        <span class="md-subhead">Score: {{$ctrl.selectedApp.score}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-xl card-media">
+                            <img ng-src="{{$ctrl.selectedApp.thumbnail_url}}" class="md-card-image" alt="thumbnail">
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-content>
+                    <span class="md-content">{{$ctrl.selectedApp.intro}}</span>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button href="/#!/apps/{{$ctrl.selectedApp.app_id}}" ng-click="getAppData($ctrl.selectedApp)">Detail</md-button>
+                    <md-button href="{{$ctrl.selectedApp.url}}">Link</md-button>
+                </md-card-actions>
+            </md-card>
+            <hr>
+            <br>
+            <br>
+            <h1 class="display-1">Comments</h1>
+            <!-- Comments Form -->
+            <div class="well">
+                <h4>Leave a Comment:</h4>
+                <form role="form">
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <hr>
+            <!-- Posted Comments -->
+            <!-- Comment -->
+            
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="img/washedout.png" alt="">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Start Bootstrap
+                            <small>August 25, 2016 at 9:30 PM</small>
+                        </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </div>
+            <!-- Comment -->
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="img/washedout.png" alt="">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Start Bootstrap
+                            <small>August 25, 2016 at 9:30 PM</small>
+                        </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    <!-- Nested Comment -->
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="img/washedout.png" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Nested Start Bootstrap
+                                    <small>August 25, 2016 at 9:30 PM</small>
+                                </h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        </div>
+                    </div>
+                    <!-- End Nested Comment -->
+                </div>
+            </div>
+        </div>
+<div flex-xs flex-gt-xs="25">
+    <h1 class="display-1">Recommend</h1>
+    <md-card md-theme="{{ 'dark-blue-grey'}}" md-theme-watch ng-if="$ctrl.selectedApp.top5.indexOf(app.app_id)>=0" ng-repeat="app in $ctrl.apps">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{app.title}}</span>
+                <!-- <span class="md-subhead">{{app.developer}}</span> -->
+                <span class="md-subhead">Score: {{app.score}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-sm card-media">
+                    <img ng-src="{{app.thumbnail_url}}" class="md-card-image" alt="thumbnail">
+                </div>
+            </md-card-title-media>
+        </md-card-title>
+        <!-- <md-card-content>
+                            <span class="md-content">{{app.intro}}</span>
+                        </md-card-content> -->
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button href="/#!/apps/{{app.app_id}}" ng-click="getAppData(app)">Detail</md-button>
+            <md-button href="{{app.url}}">Link</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
+</md-content>
+</div>
+<hr>
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Ye Wang 2016</p>
+        </div>
+    </div>
+    <!-- /.row -->
+</footer>
+</div>
