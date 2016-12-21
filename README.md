@@ -59,3 +59,5 @@ For more information on AngularJS, please check out https://angularjs.org/.
 [git-setup]: https://help.github.com/articles/set-up-git/
 [google-phone-gallery]: http://web.archive.org/web/20131215082038/http://www.android.com/devices/
 [node-download]: https://nodejs.org/en/download/
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
