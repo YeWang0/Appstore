@@ -61,4 +61,7 @@ For more information on AngularJS, please check out https://angularjs.org/.
 [node-download]: https://nodejs.org/en/download/
 
 ![Home page](/demo/1.png?=250px)
-![Home page](/demo/1.png?=250px)
+![Search](/demo/2.png?=250px)
+![Sort by scores](/demo/3.png?=250px)
+![App info page](/demo/4.png?=250px)
+![App info page2](/demo/5.png?=250px)
