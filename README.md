@@ -25,6 +25,14 @@ tutorial.
 - Navigate your browser to [http://localhost:8000/](http://localhost:8000/) to see the application 
 - running.
 
+## ScreenShots
+
+![Home page](/demo/1.png?=250px)
+![Search](/demo/2.png?=250px)
+![Sort by scores](/demo/3.png?=250px)
+![App info page](/demo/4.png?=250px)
+![App info page2](/demo/5.png?=250px)
+
 ## Application Directory Layout
 
 ```
@@ -47,20 +55,9 @@ bower.json               --> Bower specific metadata, including client-side depe
 package.json             --> Node.js specific metadata, including development tools dependencies
 ```
 
-
-## ScreenShot
-
-
-
 [angular-seed]: https://github.com/angular/angular-seed
 [bower]: http://bower.io/
 [git-home]: https://git-scm.com
 [git-setup]: https://help.github.com/articles/set-up-git/
 [google-phone-gallery]: http://web.archive.org/web/20131215082038/http://www.android.com/devices/
 [node-download]: https://nodejs.org/en/download/
-
-![Home page](/demo/1.png?=250px)
-![Search](/demo/2.png?=250px)
-![Sort by scores](/demo/3.png?=250px)
-![App info page](/demo/4.png?=250px)
-![App info page2](/demo/5.png?=250px)
