@@ -48,9 +48,8 @@ package.json             --> Node.js specific metadata, including development to
 ```
 
 
-## Contact
+## ScreenShot
 
-For more information on AngularJS, please check out https://angularjs.org/.
 
 
 [angular-seed]: https://github.com/angular/angular-seed
