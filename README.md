@@ -60,4 +60,5 @@ For more information on AngularJS, please check out https://angularjs.org/.
 [google-phone-gallery]: http://web.archive.org/web/20131215082038/http://www.android.com/devices/
 [node-download]: https://nodejs.org/en/download/
 
-![alt text](https://github.com/YeWang0/Appstore/tree/master/demo/1.png)
+![Home page](/demo/1.png?=250px)
+![Home page](/demo/1.png?=250px)
